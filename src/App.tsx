@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import React, {useState} from 'react'
+import zhCN from 'antd/locale/zh_CN';
+import {Button, ConfigProvider} from "antd";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-        {count}
-        <button onClick={()=>setCount(count+1)}>set</button>
-    </div>
-  )
+    return (
+        <ConfigProvider locale={zhCN}>
+            <div>
+                <Button type={"primary"}>a</Button>
+            </div>
+        </ConfigProvider>
+    )
 }
 
 export default App
