@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
-import zhCN from 'antd/locale/zh_CN';
-import {Button, ConfigProvider} from "antd";
+import {Outlet, useRoutes} from "react-router-dom";
+import routes from './router'
 
 function App() {
+    const element = useRoutes(routes)
     return (
-        <ConfigProvider locale={zhCN}>
-            <div>
-                <Button type={"primary"}>a</Button>
-            </div>
-        </ConfigProvider>
+        <div className="app">
+            {element}
+            <Outlet></Outlet>
+        </div>
     )
 }
 
